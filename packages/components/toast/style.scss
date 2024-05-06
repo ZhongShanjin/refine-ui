@@ -1,0 +1,25 @@
+@import "../../assets/style/common/common.scss";
+
+.mask {
+  @include mask();
+  pointer-events: none;
+  background: transparent;
+}
+
+.r-toast-content {
+  color: #fff;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}

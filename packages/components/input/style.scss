@@ -1,0 +1,165 @@
+.r-input {
+  -webkit-appearance: none; //用于取消元素的默认系统样式。通过设置这些属性，开发者可以移除元素的原生外观，如按钮或输入框的浏览器默认样式，从而可以应用自定义的样式
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit; //如果元素没有父元素（例如，一个直接放置在<body>标签内的元素），它会继续沿着DOM树向上寻找，直到找到一个设置了字体大小的元素。如果都没有找到，它最终会继承浏览器的默认字体大小
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 15px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); //第一个控制点（0.645, 0.045）位于起点的右下方，这意味着动画开始时速度较慢；第二个控制点（0.355, 1）位于终点的左上方，意味着动画在结束前速度也较慢
+  width: 100%;
+}
+
+.r-input.is-disabled {
+  background-color: #f5f7fa;
+  border-color: #e4e7ed;
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+.r-textarea.is-disabled {
+  background-color: #f5f7fa;
+  border-color: #e4e7ed;
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+
+.r-input.is-center {
+  text-align: center;
+}
+.r-textarea.is-center {
+  text-align: center;
+}
+
+.r-input:hover {
+  border-color: #c0c4cc;
+}
+
+.r-input:focus {
+  outline: none;
+  border-color: #409eff;
+}
+
+.r-input::-webkit-scrollbar {
+  z-index: 11; //具有更高z-index值的元素会覆盖在具有较低z-index值的元素之上
+  width: 6px;
+}
+
+.r-input::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+.r-input::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 6px;
+  background: #b4bccc;
+}
+
+.r-input::-webkit-scrollbar-corner {
+  background: #fff;
+}
+
+.r-input::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.r-input::-webkit-scrollbar-track-piece {
+  background: #fff;
+  width: 6px;
+}
+
+.r-textarea {
+  display: block; //这个属性将元素设置为块级元素。块级元素会占据其父元素内的完整可用宽度，并且其前后都会有一个换行。
+  resize: vertical; //这个属性允许用户通过拖动元素的底部边缘来垂直调整元素的大小。
+  padding: 5px 15px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit; //这个属性使元素的字体大小继承自其父元素。
+  color: #606266;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.r-textarea:focus {
+  outline: none;
+  border-color: #409eff;
+}
+
+.r-input-prepend,
+.r-input-append {
+  background-color: #f5f7fa;
+  color: #909399;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dcdfe6;
+  border-radius: 0px;
+  padding: 0 10px;
+  white-space: nowrap;
+  width: max-content; //自动调整其宽度，以确保整个内容都可以在一行内显示出来，前提是内容中没有任何强制换行的元素。
+}
+
+.has-prepend .r-input {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: none;
+}
+
+.has-append .r-input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: none;
+}
+
+.has-prepend .r-input-prepend {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.has-prepend .r-input-append {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.has-append .r-input-append {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.r-input--medium {
+  height: 32px;
+  line-height: 32px;
+}
+
+.r-input--small {
+  height: 28px;
+  line-height: 28px;
+}
+
+.inline-container {
+  width: 100%;
+  display: inline-flex; //类似于<span>这样的内联元素，设置为inline的元素不会独占一行，它们会排列在同一行内，直到容器宽度不足以容纳下一个元素，才会换行。内联元素的高度和宽度只能包裹其内容，不能通过CSS显式设置。弹性盒（Flexbox）是一种CSS布局模式，用于在容器中对子元素进行有效的空间分配和强大的对齐控制。
+}
+
+.r-input-outer {
+  width: 100%;
+  position: relative;
+}
+
+.r-input-clear {
+  position: absolute;
+  right: 5px;
+  top: 50%; //这行代码将元素的顶部设置为其父容器高度的50%的位置。
+  transform: translateY(-50%); //这行代码实际上会将元素向上移动其自身高度的50%。
+  color: #ccc;
+  cursor: pointer;
+}
