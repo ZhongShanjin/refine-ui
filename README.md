@@ -23,8 +23,8 @@
 
 ## Components & Feature
 
-- [x] Button
-- [x] Icon
+- [x] Button 按钮
+- [x] Icon 图表
 - [x] Input 输入框
 - [x] InputNumber 计数器
 - [x] Radio 单选框
@@ -34,4 +34,3 @@
 - [x] Message 消息提示
 - [x] Messagebox 弹窗
 - [x] Modal 复杂弹窗
-- [x] 支持按需加载组件
